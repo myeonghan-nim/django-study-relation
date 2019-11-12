@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+  <h1>Index</h1>
+
+  {% for post in posts %}
+
+    <h4>{{post.user.username}}</h4>
+    <h4>{{post.title}}</h4>
+    
+    <hr>
+
+    {% if user in post.like_users.all %}
+      <a href="{% url 'posts:like' post.id %}">Like cancel</a>
+    {% else %}
+      <a href="{% url 'posts:like' post.id %}">Like</a>
+    {% endif %}
+
+  {% endfor %}
+
+{% endblock %}

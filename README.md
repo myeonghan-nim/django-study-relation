@@ -1,10 +1,9 @@
-# M:N modeling with Django
+# README
 
-### M:N modeling
+## M:N modeling
 
 ```python
 class Doctor(models.Model):
-
     name = models.CharField(max_length=100)
 
     def __str__(self):
@@ -12,7 +11,6 @@ class Doctor(models.Model):
 
 
 class Patient(models.Model):
-
     name = models.CharField(max_length=100)
     doctors = models.ManyToManyField(Doctor, related_name="patients")
 
@@ -20,8 +18,9 @@ class Patient(models.Model):
         return self.name
 ```
 
-### Error vinding
+## Error vinding
 
 ```python
 from django.shortcuts import get_object_or_404
 ```
+

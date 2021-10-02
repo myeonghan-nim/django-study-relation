@@ -14,15 +14,15 @@ def signup(request):
         if form.is_valid():
             form.save()
 
-            return redirect('accounts:login')
+            return redirect('account:login')
     else:
         form = UserCreationForm()
-    
+
     context = {
         'form': form,
     }
 
-    return render(request, 'accounts/forms.html', context)
+    return render(request, 'account/forms.html', context)
 
 
 def login(request):
@@ -33,20 +33,19 @@ def login(request):
         if form.is_valid():
             auth_login(request, form.get_user())
 
-            return redirect('posts:index')
+            return redirect('post:index')
     else:
         form = AuthenticationForm()
-    
+
     context = {
         'form': form,
     }
 
-    return render(request, 'accounts/forms.html', context)
+    return render(request, 'account/forms.html', context)
 
 
 def logout(request):
 
     auth_logout(request)
 
-    return redirect('accounts:login')
-    
+    return redirect('account:login')

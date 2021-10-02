@@ -13,7 +13,7 @@ def index(request):
         'posts': posts,
     }
 
-    return render(request, 'posts/index.html', context)
+    return render(request, 'post/index.html', context)
 
 
 def create(request):
@@ -27,7 +27,7 @@ def create(request):
             post.user = request.user
             post.save()
 
-            return redirect('posts:index')
+            return redirect('post:index')
     else:
         form = PostForm()
 
@@ -35,7 +35,7 @@ def create(request):
         'form': form,
     }
 
-    return render(request, 'posts/forms.html', context)
+    return render(request, 'post/forms.html', context)
 
 
 def like(request, post_id):
@@ -48,5 +48,4 @@ def like(request, post_id):
     else:
         post.like_users.add(user)
 
-    return redirect('posts:index')
-    
+    return redirect('post:index')

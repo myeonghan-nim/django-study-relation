@@ -1,6 +1,6 @@
 # Study: relation
 
-## M:N relation
+## M:N
 
 ```python
 class Doctor(models.Model):

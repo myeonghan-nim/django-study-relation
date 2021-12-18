@@ -1,4 +1,4 @@
-# Study: M:N Relation
+# Study: M:N relation
 
 ## M:N relation
 
